@@ -1,5 +1,11 @@
 # pycryption
+
 Dockerized Python Encryption
+
+### PLEASE NOTE 
+#### You can use `raze.png` OR `document.txt` for Encryption 
+#### If you wish to use your own files for encryption, you need to move them to this directory, and add this line to Dockerfile 
+#### `COPY filename.ext .`
 
 ## Step 1 -> Build The Docker Image
 
@@ -7,8 +13,8 @@ Dockerized Python Encryption
 
 ## Step 2 -> Start The Docker Container
 
-
-### Before running the below docker command, make sure to replace '/my/dir' with the path of the directory where you want to have the Keys & Encrypted/Decrypted files
+### PLEASE NOTE
+#### Before running the below docker command, make sure to replace '/my/dir' with the path of the directory where you want to have the Keys & Encrypted/Decrypted files
 ### `docker run -d --name pycryption -v /my/dir:/usr/src/app -ti pycryptor`
 ### Example 
 ### `docker run -d --name pycryption -v /home/playground/Bloom/pycryptor:/usr/src/app -ti pycryptor`
