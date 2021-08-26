@@ -7,26 +7,44 @@ Dockerized Python Encryption
 #### If you wish to use your own files for encryption, you need to move them to this directory, and add this line to Dockerfile 
 #### `COPY filename.ext .`
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Step 1 -> Build The Docker Image
 
-### `docker build -t pycryptor .`
+  ```sh
+  docker build -t pycryptor .
+  ```
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 2 -> Start The Docker Container
 
 ### PLEASE NOTE
 #### Before running the below docker command, make sure to replace '/my/dir' with the path of the directory where you want to have the Keys & Encrypted/Decrypted files
-### `docker run -d --name pycryption -v /my/dir:/usr/src/app -ti pycryptor`
+  ```sh
+  docker run -d --name pycryption -v /my/dir:/usr/src/app -ti pycryptor
+  ```
 ### Example 
-### `docker run -d --name pycryption -v /home/playground/Bloom/pycryptor:/usr/src/app -ti pycryptor`
+  ```sh
+  docker run -d --name pycryption -v /home/playground/Bloom/pycryptor:/usr/src/app -ti pycryptor
+  ```
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 3 [RECEIVER] -> Creating Public And Private Keys For Receiver
 
-### `docker exec -it pycryption python create_keys.py`
+  ```sh
+  docker exec -it pycryption python create_keys.py
+  ```
 
 ### *** RECEIVER'S PUBLIC KEY IS SHARED TO THE SENDER ***
 #### Only `publickey.key` is shared
 #### `privatekey.key` is not shared 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 4 [SENDER] -> Sender Encrypts & Signs The File
 
@@ -35,15 +53,20 @@ Dockerized Python Encryption
 #### 3. Create Public & Private Keys for Sender
 #### 4. Encrypted data is signed using Sender's Private Key
 
-### `docker exec -it pycryption python encrypt.py`
-### When Prompted, Enter name of document to be encrypted [with extension] 
-### Example: `raze.png` OR `document.txt`  [`filename.ext`]
+  ```sh
+  docker exec -it pycryption python encrypt.py
+  ```
+#### When Prompted, Enter name of document to be encrypted [with extension] 
+#### Example: `raze.png` OR `document.txt`  `[filename.ext]`
 
 ### *** 4 FILES ARE SHARED TO RECEIVER ***
-#### *** ENCRYPTED FILE ***  `enc_raze.png` OR `enc_document.txt` [`enc_filename.ext`]
+#### *** ENCRYPTED FILE ***  `enc_raze.png` OR `enc_document.txt` `[enc_filename.ext]`
 #### *** ENCRYPTED SYMMTERIC KEY *** `encrypted_key`
 #### *** SENDER'S PUBLIC KEY *** `public_verify.key`
 #### *** SIGNATURE *** `sign.txt`
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Step 5 [RECEIVER] -> Receiver Decrypts File & Verifies The Signature
 
@@ -51,18 +74,35 @@ Dockerized Python Encryption
 #### 2. Encrypted Symmetric Key is decrypted using Receiver's Private Key
 #### 3. Decrypting the encrypted file using symmetric key
 
-### `docker exec -it pycryption python decrypt.py`
-### When Prompted, Enter name of document to be decrypted [with extension] 
-### Example: 'enc_document.txt' OR 'enc_raze.png' [`enc_filename.ext`]
+  ```sh
+  docker exec -it pycryption python decrypt.py
+  ```
 
-### You can check the decrypted files -> [Example: 'decrypted_enc_document.txt' OR 'decrypted_enc_raze.png']
+#### When Prompted, Enter name of document to be decrypted [with extension] 
+#### Example: `enc_raze.png` OR `enc_document.txt` `[enc_filename.ext]`
+
+### You can check the decrypted files 
+### Example: `decrypted_enc_raze.png` OR `decrypted_enc_document.txt` `[decrypted_enc_filename.ext]`
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 6 [RECEIVER/SENDER] -> Stop The Container 
-### `docker stop pycryption`
+  ```sh
+  docker stop pycryption
+  ```
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 7 [RECEIVER/SENDER] -> Remove The Container & Image
 ### Remove the Container
-### `docker rm pycryption`
+  ```sh
+  docker rm pycryption
+  ```
 
 ### Remove the Image
-### `docker rmi pycryptor`
+  ```sh
+  docker rmi pycryptor
+  ```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
