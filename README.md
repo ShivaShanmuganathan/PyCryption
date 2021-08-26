@@ -10,7 +10,7 @@ Dockerized Python Encryption
 
 ### Before running the below docker command, make sure to replace '/my/dir' with the path of the directory where you want to have the Keys & Encrypted/Decrypted files
 ### `docker run -d --name pycryption -v /my/dir:/usr/src/app -ti pycryptor`
-### EXAMPLE 
+### Example 
 ### `docker run -d --name pycryption -v /home/playground/Bloom/pycryptor:/usr/src/app -ti pycryptor`
 
 
@@ -19,6 +19,8 @@ Dockerized Python Encryption
 ### `docker exec -it pycryption python create_keys.py`
 
 ### *** RECEIVER'S PUBLIC KEY IS SHARED TO THE SENDER ***
+#### Only `publickey.key` is shared
+#### `privatekey.key` is not shared 
 
 ## Step 4 [SENDER] -> Sender Encrypts & Signs The File
 
@@ -28,21 +30,24 @@ Dockerized Python Encryption
 #### 4. Encrypted data is signed using Sender's Private Key
 
 ### `docker exec -it pycryption python encrypt.py`
-### When Prompted, Enter name of document to be encrypted such as -> 'document.txt' OR 'raze.png'
+### When Prompted, Enter name of document to be encrypted [with extension] 
+### Example: `raze.png` OR `document.txt`  [`filename.ext`]
 
-### *** 3 FILES ARE SHARED TO RECEIVER ***
-### *** ENCRYPTED FILE ***
-### *** ENCRYPTED_SYMMTERIC_KEY ***
-### *** SENDER'S PUBLIC KEY ***
+### *** 4 FILES ARE SHARED TO RECEIVER ***
+#### *** ENCRYPTED FILE ***  `enc_raze.png` OR `enc_document.txt` [`enc_filename.ext`]
+#### *** ENCRYPTED SYMMTERIC KEY *** `encrypted_key`
+#### *** SENDER'S PUBLIC KEY *** `public_verify.key`
+#### *** SIGNATURE *** `sign.txt`
 
 ## Step 5 [RECEIVER] -> Receiver Decrypts File & Verifies The Signature
 
 #### 1. Encrypted data is verified using Sender's Public Key
-#### 2. Symmetric Key is decrypted using Receiver's Private Key
+#### 2. Encrypted Symmetric Key is decrypted using Receiver's Private Key
 #### 3. Decrypting the encrypted file using symmetric key
 
 ### `docker exec -it pycryption python decrypt.py`
-### When Prompted, Enter name of document to be decrypted -> [Example: 'enc_document.txt' OR 'enc_raze.png']
+### When Prompted, Enter name of document to be decrypted [with extension] 
+### Example: 'enc_document.txt' OR 'enc_raze.png' [`enc_filename.ext`]
 
 ### You can check the decrypted files -> [Example: 'decrypted_enc_document.txt' OR 'decrypted_enc_raze.png']
 
