@@ -1,11 +1,11 @@
 # pycryption
 Dockerized Python Encryption
 
-## Step 1 -> BUILD THE DOCKER IMAGE
+## Step 1 -> Build The Docker Image
 
 ### `docker build -t pycryptor .`
 
-## Step 2 -> START THE DOCKER CONTAINER
+## Step 2 -> Start The Docker Container
 
 
 ### Before running the below docker command, make sure to replace '/my/dir' with the path of the directory where you want to have the Keys & Encrypted/Decrypted files
@@ -14,13 +14,13 @@ Dockerized Python Encryption
 ### `docker run -d --name pycryption -v /home/playground/Bloom/pycryptor:/usr/src/app -ti pycryptor`
 
 
-## Step 3 [RECEIVER] -> CREATING PUBLIC AND PRIVATE KEYS FOR RECEIVER
+## Step 3 [RECEIVER] -> Creating Public And Private Keys For Receiver
 
 ### `docker exec -it pycryption python create_keys.py`
 
 ### *** RECEIVER'S PUBLIC KEY IS SHARED TO THE SENDER ***
 
-## Step 4 [SENDER] -> SENDER ENCRYPTS & SIGNS THE FILE
+## Step 4 [SENDER] -> Sender Encrypts & Signs The File
 
 #### 1. Perform Symmetric Encryption on the file you choose
 #### 2. Symmetric Key is encrypted using Receiver's Public Key
@@ -35,7 +35,7 @@ Dockerized Python Encryption
 ### *** ENCRYPTED_SYMMTERIC_KEY ***
 ### *** SENDER'S PUBLIC KEY ***
 
-## Step 5 [RECEIVER] -> RECEIVER DECRYPTS FILE & VERIFIES THE SIGNATURE
+## Step 5 [RECEIVER] -> Receiver Decrypts File & Verifies The Signature
 
 #### 1. Encrypted data is verified using Sender's Public Key
 #### 2. Symmetric Key is decrypted using Receiver's Private Key
@@ -46,10 +46,10 @@ Dockerized Python Encryption
 
 ### You can check the decrypted files -> [Example: 'decrypted_enc_document.txt' OR 'decrypted_enc_raze.png']
 
-## Step 6 [RECEIVER/SENDER] -> STOP THE CONTAINER 
+## Step 6 [RECEIVER/SENDER] -> Stop The Container 
 ### `docker stop pycryption`
 
-## Step 7 [RECEIVER/SENDER] -> REMOVE THE CONTAINER & IMAGE
+## Step 7 [RECEIVER/SENDER] -> Remove The Container & Image
 ### Remove the Container
 ### `docker rm pycryption`
 
