@@ -1,6 +1,11 @@
 # pycryption
 
-Dockerized Python Encryptor
+## Dockerized Python Encryptor
+
+1. Encrypt your file. 
+2. Transfer the encrypted file.
+3. It can be decrypted only by the intended receiver.
+
 
 ### PLEASE NOTE 
 #### You can use `raze.png` OR `document.txt` for Encryption 
