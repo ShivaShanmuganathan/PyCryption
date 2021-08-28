@@ -29,7 +29,7 @@ ekey = open('encrypted_key','wb')
 ekey.write(encrypted_key)
 
 
-#----------USING SENDER'S PUBLIC KEY TO SIGN MESSAGE------------#
+#----------USING SENDER'S PRIVATE KEY TO SIGN MESSAGE------------#
 # GENERATE ASYMMETRIC KEY PAIR [to use for signature]
 (public_key, private_key) = rsa.newkeys(512)
 vkey = open('public_verify.key','wb')
@@ -45,4 +45,7 @@ sign.close()
 
 print('------- ENCRYPTION COMPLETE ---------')
 print('\n')
-
+print(' YOU CAN NOW SHARE THE ENCRYPTED FILE: _enc' +filename+ '\n' );
+print(' YOU CAN NOW SHARE THE ENCRYPTED SYMMETRIC KEY: encrypted_key \n' );
+print(' YOU CAN NOW SHARE THE PUBLIC KEY OF SENDER: public_verify.key \n' );
+print(' YOU CAN NOW SHARE THE SIGNATURE: sign.txt \n' );
