@@ -1,6 +1,6 @@
 # pycryption
 
-Dockerized Python Encryption
+Dockerized Python Encryptor
 
 ### PLEASE NOTE 
 #### You can use `raze.png` OR `document.txt` for Encryption 
