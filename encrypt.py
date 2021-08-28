@@ -41,3 +41,8 @@ signature = rsa.sign(encrypted_data, private_key, 'SHA-1')
 sign = open('sign.txt','wb')
 sign.write(signature)
 sign.close()
+
+
+print('------- ENCRYPTION COMPLETE ---------')
+print('\n')
+
