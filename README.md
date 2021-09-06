@@ -14,19 +14,6 @@
 
 ![image](https://user-images.githubusercontent.com/30176438/132201289-0b9b63dc-9e81-4621-bf47-3b0c44dea95d.png)
 
-```sequence
-Alice->Bob: Request for Bob's Public Key
-Bob-->Alice: Sends Public Key
-Note left of Alice: Encrypts message
-Note left of Alice: Sign encrypted message
-Alice->Bob: Sends Encrypted Message
-Alice->Bob: Sends Signature
-Alice->Bob: Sends Public Key
-
-Note right of Bob: Verify Sign using Public Key
-Note right of Bob: Decrypt message
-
-```
 
 ## :book: Detailed Explaination
 
@@ -208,13 +195,13 @@ try:
 
 except:
     print('message is tampered')
-    ```
+ ```
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-## Dockerized Python Encryptor
+## Dockerized Python Encryptor - How does this work?
 
 
 1. Encrypt your file. 
@@ -229,6 +216,8 @@ except:
 #### `COPY filename.ext .`
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 1: Build The Docker Image
