@@ -10,20 +10,20 @@
 ## :mag: How does it work?
 
 ## :camera: UML diagrams
-### Alice wants to send a `message` to Bob
+### Shan wants to send a `message` to Shiva
 
-![image](https://user-images.githubusercontent.com/30176438/132201289-0b9b63dc-9e81-4621-bf47-3b0c44dea95d.png)
+![image](https://user-images.githubusercontent.com/30176438/132206323-072bfead-e86c-4acc-8803-b8ee904c33e8.png)
 
 
 ## :book: Detailed Explaination
 
-1. Alice requests for Bob's `public_key`
-2. Alice performs `symmetric encryption` on the `message`
-3. Alice encrypts the `symmetric_key` using Bob's public key
-4. Alice signs the `encrypted_message` using Alice's `private_key`
-5. Alice sends the `public_key` of Alice, `encrypted_message`, and `signature` to Bob
-6. Bob verifies the `encrypted_message` using the signature and Alice's `public_key`.
-7. Bob decryptes the `encrypted_message` using Bob's `private_key`
+1. Shan requests for Shiva's `public_key`
+2. Shan performs `symmetric encryption` on the `message`
+3. Shan encrypts the `symmetric_key` using Shiva's public key
+4. Shan signs the `encrypted_message` using Shan's `private_key`
+5. Shan sends the `public_key` of Shan, `encrypted_message`, and `signature` to Shiva
+6. Shiva verifies the `encrypted_message` using the signature and Shan's `public_key`.
+7. Shiva decryptes the `encrypted_message` using Shiva's `private_key`
 
 
 ## :rocket: Features
@@ -69,16 +69,16 @@ print('PUBLIC & PRIVATE KEY OF RECEIVER HAS BEEN GENERATED')
 
 
 ### :rocket: [encrypt.py](https://github.com/ShivaShanmuganathan/PyCryption/blob/master/encrypt.py)
-### Alice performs encryption and signs the message
+### Shan performs encryption and signs the message
 - Perform `Symmetric Encryption` on the `Message`
-- Encrypt `Symmetric_Key` using Bob's `Public_Key`
-- Generate `public_key` and `private_key` for Alice
-- Sign the `encrypted_message` using Alice's `private_key`
+- Encrypt `Symmetric_Key` using Shiva's `Public_Key`
+- Generate `public_key` and `private_key` for Shan
+- Sign the `encrypted_message` using Shan's `private_key`
 
-### These 4 Files need to be sent to Bob
+### These 4 Files need to be sent to Shiva
 
 ##### 1. `encrypted_symmetric_key` 
-##### 2. Alice's `public_key`
+##### 2. Shan's `public_key`
 ##### 3. `signature` 
 ##### 4. `encrypted_message`
 
@@ -143,12 +143,12 @@ print(' YOU CAN NOW SHARE THE SIGNATURE: sign.txt \n' );
 
 
 ### :rocket: [decrypt.py](https://github.com/ShivaShanmuganathan/PyCryption/blob/master/decrypt.py)
-### Bob performs decryption and verifies the message
-- Bob's `private_key` is used to decrypt the `encrypted_symmetric_key`
+### Shiva performs decryption and verifies the message
+- Shiva's `private_key` is used to decrypt the `encrypted_symmetric_key`
 - `symmetric_key` is used to decrypt the `Message`
-- `signature` is verified using Alice's `public_key`
+- `signature` is verified using Shan's `public_key`
 
-### Bob can now access the decrypted message.
+### Shiva can now access the decrypted message.
 
 
 
@@ -314,7 +314,3 @@ except:
   ```sh
   docker rmi pycryptor
   ```
-  
-  
-
-
