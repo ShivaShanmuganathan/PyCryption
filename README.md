@@ -200,7 +200,7 @@ except:
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Dockerized Python Encryptor - How does this work?
+## Dockerized Python Encryptor - How do I run this?
 
 
 1. Encrypt your file. 
@@ -211,7 +211,7 @@ except:
 
 ### PLEASE NOTE 
 #### You can use `raze.png` OR `document.txt` for Encryption 
-#### If you wish to use your own files for encryption, you need to move them to this directory, and add this line to Dockerfile 
+#### If you wish to use your own files for encryption, you need to move them to repository's directory, and add the below line to Dockerfile 
 #### `COPY filename.ext .`
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
