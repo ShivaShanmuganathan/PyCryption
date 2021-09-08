@@ -1,13 +1,13 @@
-# pycryption 
-  https://hackmd.io/@jYqrhLjWQo-qQKC34I0ymg/shiva
+# PyCryption 
+ 
 
-# CryptoWallet to Encrypt Files
+# 🔐: CryptoWallet to Encrypt Files
 
 ###### tags: `Bloom Week1`
-## :scroll: GitHub Repo for the Project ➜ [PyCryption](https://github.com/ShivaShanmuganathan/PyCryption)
 
 
-## :mag: How does it work?
+
+# :mag: How does it work?
 
 ## :camera: UML diagrams
 ### Shan wants to send a `message` to Shiva
@@ -28,11 +28,10 @@
 
 ## :rocket: Features
 
-- [x] Perform both Symmetric & Asymmetric Encryption
+- [x] Symmetric Encryption
+- [x] Asymmetric Encryption
 - [x] Signing messages
 - [x] Verifying signature
-- [x] Encrypting messages
-- [x] Decrypting messages
 - [x] Dockerized the application
 
 ## 🖭 How does each file work?
