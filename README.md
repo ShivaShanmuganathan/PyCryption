@@ -21,9 +21,10 @@
 2. Shan performs `symmetric encryption` on the `message`
 3. Shan encrypts the `symmetric_key` using Shiva's public key
 4. Shan signs the `encrypted_message` using Shan's `private_key`
-5. Shan sends the `public_key` of Shan, `encrypted_message`, and `signature` to Shiva
-6. Shiva verifies the `encrypted_message` using the signature and Shan's `public_key`.
-7. Shiva decryptes the `encrypted_message` using Shiva's `private_key`
+5. Shan sends the `public_key` of Shan, `encrypted_message`, `encrypted_symmetric_key` and `signature` to Shiva
+6. Shiva verifies the `encrypted_message` using the signature and Shan's `public_key`
+7. Shiva decryptes the `encrypted_symmetric_key` using Shiva's `private_key`
+8. Shiva decryptes the `encrypted_message` using `symmetric_key`
 
 
 ## :rocket: Features
