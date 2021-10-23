@@ -1,7 +1,7 @@
 # PyCryption 
  
 
-# 🔐: CryptoWallet to Encrypt Files
+# 🔐 CryptoWallet to Encrypt Files
 
 ###### tags: `Bloom Week1`
 
